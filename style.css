@@ -2,6 +2,7 @@
     --chip-bg: #a0c7ff;
     --chip-color: #133f7e;
     --header-bg: #0f235a;
+    --active-red: #c65142;
 }
 
 body {
@@ -31,6 +32,8 @@ header {
     align-items: center;
 
     padding: 12px;
+    position: sticky;
+    top:0
 }
 
 
@@ -76,10 +79,22 @@ header {
     margin: 12px;
 }
 
+#tree-container>button {
+    background-color: var(--active-red);
+    border: none;
+    cursor: pointer;
+    border-radius: 18px;
+    padding: 6px 6px 6px 10px;
+    color: white;
+    border: 1px solid black;
+   
+}
+
 .container {
     display: grid;
-    grid-template-columns: 30% 70%;
+    grid-template-columns: 35% 65%;
     min-height: 100vh;
+
 }
 
 
@@ -101,15 +116,35 @@ header {
     color: red;
 }
 
-.node {
-    display: flex;
-}
-
-.node ul {
+li ul {
     display: none;
-
 }
 
-.toggle.show+ul {
+li.open>ul {
     display: block;
+}
+
+.toggle {
+    cursor: pointer;
+    margin: 4px
+}
+
+.toggle::after {
+    content: "➕";
+    display: inline-block;
+    margin:10px;
+    transition: transform 0.3s;
+}
+
+li.open>.toggle::after {
+    transform: rotate(180deg);
+    content: "➖"
+}
+
+li:not(:has(ul))>.toggle::after {
+    content: "";
+}
+
+ul {
+    list-style: none;
 }

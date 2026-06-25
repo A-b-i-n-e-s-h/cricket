@@ -8,6 +8,7 @@ function showData() {
             const data = JSON.parse(req.responseText);
             console.log(data);
             const tree = createTree(data);
+            document.getElementById("tree").innerHTML="";
             document.getElementById("tree").appendChild(tree);
         }
     }
@@ -17,26 +18,36 @@ function showData() {
 function createTree(data) {
 
     const ul = document.createElement("ul");
-    ul.className = "toggle";
-    ul.addEventListener('click', function (e) {
 
-        if (e.target.tagName === "LABEL") {
-            ul.classList.toggle("show");
-        }
-
-    })
     for (d of data) {
         console.log(d.label);
 
         const li = document.createElement("li");
+        // const wrapper = document.createElement("div");
+        // wrapper.className='node';
         const input = document.createElement("input");
         input.type = "checkbox";
         const label = document.createElement("label");
+        label.className = 'toggle';
         // label.setAttribute("for",d.id);
         label.textContent = d.label;
         input.dataset.id = d.id;
-        li.appendChild(input);
-        li.appendChild(label);
+        // wrapper.appendChild(input);
+        // wrapper.appendChild(label);
+        // li.appendChild(wrapper);
+        li.append(input);
+        li.append(label);
+
+        if (d.children) {
+            label.addEventListener('click', () => li.classList.toggle("open"));
+        } else {
+            label.classList.remove("open");
+        }
+        // if(input.checked && d.children){
+        //     input.classList.toggle("open");
+        // }else{
+        //     input.classList.remove("open");
+        // }
 
 
         input.addEventListener('change', () => {
@@ -45,7 +56,17 @@ function createTree(data) {
             children.forEach(cb => {
                 cb.checked = input.checked;
                 cb.indeterminate = false;
+                const hasChildren = li.querySelector('ul');
+                if (cb.checked && hasChildren) {   
+                    li.classList.add("open");
+                }
             });
+            // let parent = li;
+            // while(parent){
+            //     parent.classList.add("open");
+            //     parent = parent.parentElement.closest("li");
+            // }
+
             updateParent(input);
             updateChip();
 
