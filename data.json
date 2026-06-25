@@ -1,0 +1,164 @@
+[
+    {
+        "id": "root",
+        "label": "Cricket Squad",
+        "children": [
+            {
+                "id": "batters",
+                "label": "Batters",
+                "children": [
+                    {
+                        "id": "left",
+                        "label": "Left-Handed",
+                        "children": [
+                            {
+                                "id": "p1",
+                                "label": "Ishan Kishan"
+                            },
+                            {
+                                "id": "p2",
+                                "label": "Abhishiek Sharma"
+                            },
+                            {
+                                "id": "p3",
+                                "label": "Vaibhav Sooriyavanshi"
+                            },
+                            {
+                                "id": "p4",
+                                "label": "Tilak Varma"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "right",
+                        "label": "Right-Handed",
+                        "children": [
+                            {
+                                "id": "p5",
+                                "label": "Rohit Sharma"
+                            },
+                            {
+                                "id": "p6",
+                                "label": "Virat Kohli"
+                            },
+                            {
+                                "id": "p7",
+                                "label": "Shreyas Iyer"
+                            },
+                            {
+                                "id": "p8",
+                                "label": "Ruturaj Gaikwad"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "WK",
+                "label": "Wicket-Keepers",
+                "children": [
+                    {
+                        "id": "p9",
+                        "label": "MS Dhoni"
+                    },
+                    {
+                        "id": "p10",
+                        "label": "Sanju Samson"
+                    },
+                    {
+                        "id": "p11",
+                        "label": "Rishab Pant"
+                    },
+                    {
+                        "id": "p12",
+                        "label": "Dhurv Jurel"
+                    }
+                ]
+            },
+            {
+                "id": "allrounder",
+                "label": "All-Rounders",
+                "children": [
+                    {
+                        "id": "bat_ar",
+                        "label": "Batting All-Rounders",
+                        "children": [
+                            {
+                                "id": "p13",
+                                "label": "Hardik Pandya"
+                            },
+                            {
+                                "id": "p14",
+                                "label": "Shivam Dube"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "bowl_ar",
+                        "label": "Bowling All-Rounders",
+                        "children": [
+                            {
+                                "id": "p15",
+                                "label": "Washington Sundar"
+                            },
+                            {
+                                "id": "p16",
+                                "label": "Ravindra Jadeja"
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                "id": "bowlers",
+                "label": "Bowlers",
+                "children": [
+                    {
+                        "id": "fast",
+                        "label": "Fast-Bowlers",
+                        "children": [
+                            {
+                                "id": "p17",
+                                "label": "Harshit Rana"
+                            },
+                            {
+                                "id": "p18",
+                                "label": "Siraj"
+                            },
+                            {
+                                "id": "p19",
+                                "label": "Bumrah"
+                            },
+                            {
+                                "id": "p20",
+                                "label": "Arshdeep Singh"
+                            }
+                        ]
+                    },
+                    {
+                        "id": "spin",
+                        "label": "Spin-Bowlers",
+                        "children": [
+                            {
+                                "id": "p21",
+                                "label": "Kuldeep Yadav"
+                            },
+                            {
+                                "id": "p22",
+                                "label": "Varun Chakaravarthy"
+                            },
+                            {
+                                "id": "p23",
+                                "label": "Yuvi Chahal"
+                            },
+                            {
+                                "id": "p24",
+                                "label": "Abinesh"
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    }
+]
