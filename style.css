@@ -239,6 +239,7 @@ footer {
     justify-content: space-around;
     margin: 10px;
     gap: 24px;
+    cursor: pointer;
 
 }
 
@@ -255,5 +256,55 @@ footer {
     display: flex;
     justify-content: start;
     align-items: center;
-    gap: 16px
+    gap: 16px;
+    cursor: pointer;
+}
+
+.popup-container {
+    display: flex;
+    flex-direction: column;
+    align-self: center;
+    justify-self: center;
+    position: fixed;
+    bottom: 15%;
+    animation: pop 0.3s ease-out;
+    z-index: 100;
+    background-color: #133f7e;
+    padding: 4px 46px;
+    text-align: center;
+    color: white;
+    border-radius: 12px;
+    animation: slideUp 0.3s ease-in-out forwards, slideDown 0.3s  ease-in-out 2.2s forwards;
+
+}
+.popup-container:hover{
+    animation-play-state: paused;
+}
+.green-conatiner{
+    background-color: seagreen !important;
+}
+@keyframes slideUp {
+    from {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+}
+
+@keyframes slideDown {
+    from {
+        opacity: 1;
+        transform: translateY(0);
+    }
+
+    to {
+        opacity: 0;
+        transform: translateY(100vh);
+    }
+
 }

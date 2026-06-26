@@ -8,7 +8,7 @@ function showData() {
             const data = JSON.parse(req.responseText);
             console.log(data);
             const tree = createTree(data);
-            document.getElementById("tree").innerHTML="";
+            document.getElementById("tree").innerHTML = "";
             document.getElementById("tree").appendChild(tree);
         }
     }
@@ -58,9 +58,10 @@ function createTree(data) {
                 cb.checked = input.checked;
                 cb.indeterminate = false;
                 const hasChildren = li.querySelector('ul');
-                if (cb.checked && hasChildren) {   
+                if (cb.checked && hasChildren) {
                     li.classList.add("open");
                 }
+
             });
             // let parent = li;
             // while(parent){
@@ -186,22 +187,68 @@ function removeChip(id) {
 }
 
 //Counter
-function playerLimit(){
-    let countDisplay= document.getElementById("counter");
-    console.log("count current value",countDisplay);
+function playerLimit() {
+    let countDisplay = document.getElementById("counter");
+    console.log("count current value", countDisplay);
     let checked = document.querySelectorAll("input:checked");
     console.log("playerLimit function called")
     let playerCount = 0;
-    checked.forEach(cb =>{
+    checked.forEach(cb => {
         let li = cb.parentElement;
-        if(!li.querySelector("ul")){
+        if (!li.querySelector("ul")) {
             console.log("no child check box");
             playerCount++;
         }
         console.log(playerCount);
-        countDisplay.innerHTML=`${playerCount}/11`;
+        countDisplay.innerHTML = `${playerCount}/11`;
     });
+    return playerCount;
 }
+
+//confirm team function
+
+let confirmBtn = document.getElementById("confirm-btn");
+confirmBtn.addEventListener('click', () => {
+    let playerCount = playerLimit();
+    console.log(`${playerCount}-players selected`);
+    showPopup(playerCount);
+});
+
+function showPopup(playerCount) {
+    const popup = document.createElement("div");
+    if (playerCount > 11) {
+        popup.innerHTML = `
+            <div class="popup-container">
+                <p>Selected ${playerCount} players</p>
+                <p>Remove ${(playerCount)-11} players<br>To confirm playing 11</p>
+            </div>
+        `;
+        console.log("playing 11 exceeded");
+        document.body.appendChild(popup);
+ 
+    }
+    else if (playerCount<11){
+         popup.innerHTML = `
+            <div class="popup-container">
+                <p>Selected ${playerCount} players</p>
+                <p>Add ${11-(playerCount)} players<br>To confirm playing 11</p>
+            </div>
+        `;
+        console.log("playing 11 not selected");
+        document.body.appendChild(popup);
+    }
+    else{
+         popup.innerHTML = `
+            <div class="popup-container green-conatiner">
+                <p>${playerCount} players Selected</p>
+                <p>Playing 11 confirmed</p>
+            </div>
+        `;
+        console.log("playing 11 not selected");
+        document.body.appendChild(popup);
+    }
+}
+
 
 
 
