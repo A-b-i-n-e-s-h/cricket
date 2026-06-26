@@ -27,6 +27,7 @@ function createTree(data) {
         // wrapper.className='node';
         const input = document.createElement("input");
         input.type = "checkbox";
+        // input.id = d.id;
         const label = document.createElement("label");
         label.className = 'toggle';
         // label.setAttribute("for",d.id);
@@ -69,6 +70,7 @@ function createTree(data) {
 
             updateParent(input);
             updateChip();
+            playerLimit();
 
         });
 
@@ -145,8 +147,11 @@ function updateChip() {
         if (li.querySelector("ul")) return;
         const name = li.querySelector("label").textContent;
         console.log(name);
+
         const id = cb.dataset.id;
+
         const chip = document.createElement("div");
+
         chip.innerHTML = `
             <div class="chip">${name} <button class="removeBtn" onclick="removeChip('${id}');">&#10006;</button></div>
         `;
@@ -175,41 +180,37 @@ function removeChip(id) {
         }
         updateParent(cb);
         updateChip();
+        playerLimit();
     });
 
 }
+
+//Counter
+function playerLimit(){
+    let countDisplay= document.getElementById("counter");
+    console.log("count current value",countDisplay);
+    let checked = document.querySelectorAll("input:checked");
+    console.log("playerLimit function called")
+    let playerCount = 0;
+    checked.forEach(cb =>{
+        let li = cb.parentElement;
+        if(!li.querySelector("ul")){
+            console.log("no child check box");
+            playerCount++;
+        }
+        console.log(playerCount);
+        countDisplay.innerHTML=`${playerCount}/11`;
+    });
+}
+
+
+
 
 
 // const toggle = document.querySelector(".toggle");
 // toggle.onclick=function(){
 //     toggle.classList.toggle("show");
 // }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 

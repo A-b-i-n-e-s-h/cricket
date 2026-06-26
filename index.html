@@ -5,42 +5,52 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.1/css/all.min.css">
     <title>Squad Selection</title>
 </head>
 
 <body>
-    <header>
-        <div class="header-left">
-            <div class="logo">
-                <img src="assests/bcci-logo-rounded.webp" alt="bcci">
+    <div class="body-grid">
+        <header>
+            <div class="header-left">
+                <div class="logo">
+                    <img class="logo-header" src="assests/bcci-logo-rounded.webp" alt="bcci">
+                </div>
+                <p class="active">International</p>
+                <p>Domestic</p>
             </div>
-            <p class="active">International</p>
-            <p>Domestic</p>
-        </div>
-        <div class="header-right">
-            <div class="logo">
-                <img src="assests/search-icon.webp" alt="bcci">
+            <div class="header-right">
+                <div class="logo">
+                    <img class="search-header" src="assests/search-icon.webp" alt="bcci">
+                </div>
+                <div class="logo">
+                    <img src="assests/ipl-logo.webp" alt="bcci">
+                </div>
+                <div class="logo">
+                    <img src="assests/wpl-logo.webp" alt="bcci">
+                </div>
+
             </div>
-            <div class="logo">
-                <img src="assests/ipl-logo.webp" alt="bcci">
+        </header>
+
+
+
+        <section class="container">
+            <div id="tree-container">
+                <h1>Select the Squad</h1>
+                <button onclick="showData();">Show Squad</button>
+                <div id="tree"></div>
             </div>
-            <div class="logo">
-                <img src="assests/wpl-logo.webp" alt="bcci">
+            <div id="chips-container">
+                <div id="chips"></div>
+                <div id="limit-container">
+                    <div id="counter">0/11</div>
+                    <button id="confirm-btn">Confirm Team</button>
+                </div>
+
             </div>
 
-        </div>
-    </header>
-    <section class="container">
-        <div id="tree-container">
-            <h1>Select the Squad</h1>
-            <button onclick="showData();">Show Squad</button>
-            <div id="tree"></div>
-        </div>
-        <div id="chips-container">
-            <div id="chips" ></div>
-        </div>
-
-    </section>
+        </section>
 
 
 
@@ -53,7 +63,7 @@
 
 
 
-    <!-- <div class="container">
+        <!-- <div class="container">
         <ul>
             <li>
                 <input type="checkbox" id="option"><label for="option"> Electronics</label>
@@ -66,7 +76,7 @@
         </ul>
     </div> -->
 
-    <!-- <div class="node">
+        <!-- <div class="node">
         <div class="toggle">Batters</div>
         <ul>
             <li>left-handed</li>
@@ -75,22 +85,25 @@
     </div> -->
 
 
-    <footer >
-        <div class="footer-flex">
-            <img src="assests/bcci-logo-rounded.webp">
-            <div class="social-media">
-                
+        <footer>
+            <div class="footer-flex">
+                <div class="footer-grid">
+                    <img class="alignSelfCenter" src="assests/bcci-logo-rounded.webp">
+                    <p>Contact Us</p>
+                    <p>Match</p>
+                    <p>Videos</p>
+                    <p>News</p>
+                    <p>More</p>
+                    <p>Players</p>
+                </div>
+                <div class="social-media">
+                    <i class="fa-brands fa-square-instagram"></i>
+                    <i class="fa-brands fa-square-facebook"></i>
+                    <i class="fa-brands fa-square-x-twitter"></i>
+                </div>
             </div>
-        </div>
-        <div class="footer-grid">
-            <p>Contact Us</p>
-            <p>Contact Us</p>
-            <p>Contact Us</p>
-            <p>Contact Us</p>
-            <p>Contact Us</p>
-            <p>Contact Us</p>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
 
     <script src="script.js"></script>
